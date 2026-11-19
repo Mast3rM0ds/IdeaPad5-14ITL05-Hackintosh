@@ -177,6 +177,7 @@ cp "$d/X64/EFI/OC/Tools/OpenShell.efi" "$OC/Tools/"
 
 d="$(get_asset acidanthera/Lilu 'RELEASE\.zip$')";                 copy_kext "$d" Lilu.kext
 d="$(get_asset acidanthera/VirtualSMC 'RELEASE\.zip$')";           copy_kext "$d" VirtualSMC.kext
+d="$(get_asset acidanthera/WhateverGreen 'RELEASE\.zip$')";        copy_kext "$d" WhateverGreen.kext
 d="$(get_asset acidanthera/AppleALC '^AppleALC-.*RELEASE\.zip$')"; copy_kext "$d" AppleALC.kext
 d="$(get_asset acidanthera/NVMeFix 'RELEASE\.zip$')";              copy_kext "$d" NVMeFix.kext
 d="$(get_asset acidanthera/RestrictEvents 'RELEASE\.zip$')";       copy_kext "$d" RestrictEvents.kext
