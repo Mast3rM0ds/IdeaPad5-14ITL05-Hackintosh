@@ -1,5 +1,7 @@
 # IdeaPad5-14ITL05-Hackintosh
 
+> Also in this repo: [`B450M-HDV-R4.0-Desktop/`](B450M-HDV-R4.0-Desktop/), an OpenCore EFI builder for an ASRock B450M-HDV R4.0 + Ryzen 5 3500X desktop.
+
 OpenCore EFI builder for the Lenovo IdeaPad 5 14ITL05 (i3-1115G4) → macOS Tahoe 26.7
 
 OpenCore 1.0.8 (DEBUG build) · SMBIOS MacBookPro16,2 · WhateverXe graphics acceleration · this is the

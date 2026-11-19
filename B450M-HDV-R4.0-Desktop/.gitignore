@@ -1,0 +1,13 @@
+# your Mac identity - never commit it
+smbios.json
+# build output / caches
+_downloads/
+EFI/BOOT/
+EFI/OC/OpenCore.efi
+EFI/OC/config.plist
+EFI/OC/Drivers/
+EFI/OC/Tools/
+EFI/OC/Kexts/
+EFI/OC/Resources/
+com.apple.recovery.boot/
+.DS_Store
