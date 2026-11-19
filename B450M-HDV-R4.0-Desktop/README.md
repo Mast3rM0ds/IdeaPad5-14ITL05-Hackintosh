@@ -23,9 +23,18 @@ The Mac identity is generated once into `smbios.json` (gitignored) and reused on
 - **Above 4G Decoding: Enabled**, Resizable BAR: Disabled (or leave `ResizeAppleGpuBars` at -1)
 - Secure Boot: Disabled · CSM: Disabled · Fast Boot: Disabled
 - SVM can stay on. If it hangs very early, set a fixed DRAM speed (XMP off) once, to rule out RAM.
-- If it stops at `PCI configuration begin`: `npci=0x2000` is already set. Check Above 4G.
+- If it stops at `PCI configuration begin`: try `npci=0x3000` instead of `0x2000`, or none. Check Above 4G.
 
 ## The RTX 3050
+**Installer:** `ResizeAppleGpuBars = 0` (small BAR). With the full BAR, macOS re-places the card's memory during PCI
+setup and the firmware framebuffer goes with it, so the screen freezes after `nfs_kext_start`. Same rule as 1401
+(`nullmoth-installer-bar`).
+
+**After install:** the NullMoth NVIDIA driver (github.com/nullmoth/nvidia-macos-driver) supports macOS 26 and
+Turing-or-newer cards. Use its 1401 Mac app (`1401-Mac-<version>.dmg`): it installs the driver, adds what the
+driver needs to OpenCore (AMFIPass, SIP `0x0A43`, its boot-args, IONDRVSupport exclusion) and restores the full BAR.
+
+### Old note
 macOS has never had drivers for NVIDIA RTX (Turing/Ampere) cards, and the 3500X has no iGPU, so the
 installer runs on the firmware framebuffer: slow, no acceleration. Some setups lose the picture once
 macOS takes over the display; if the screen goes black after the verbose text, try the other output
