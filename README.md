@@ -1,6 +1,7 @@
 # IdeaPad5-14ITL05-Hackintosh
 
 > Also in this repo: [`B450M-HDV-R4.0-Desktop/`](B450M-HDV-R4.0-Desktop/), an OpenCore EFI builder for an ASRock B450M-HDV R4.0 + Ryzen 5 3500X desktop.
+> And [`1401-linux/`](1401-linux/): runs NullMoth's 1401 (scan, build, stick) on Linux.
 
 OpenCore EFI builder for the Lenovo IdeaPad 5 14ITL05 (i3-1115G4) → macOS Tahoe 26.7
 
