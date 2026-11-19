@@ -227,7 +227,7 @@
 				<key>Enabled</key>
 				<true/>
 				<key>Identifier</key>
-				<string>com.apple.driver.AppleMCEReporter</string>
+				<string>com.apple.driver.AppleIntelMCEReporter</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
