@@ -68,10 +68,16 @@ print("CPU:  ", r.get("CPU", {}).get("Processor Name"), "/", r.get("CPU", {}).ge
 for n, g in (r.get("GPU") or {}).items():
     print("GPU:  ", n, "/", g.get("Codename"), g.get("Device ID"), "ReBAR", g.get("Resizable BAR"))
 EOF
+  fix_report
+}
+
+fix_report() {
+  python3 -I "$HERE/fix_report.py" "$SRC" "$SCAN/Report.json" || die "the hardware report does not pass 1401's check (see above)"
 }
 
 do_build() {
   [ -s "$SCAN/Report.json" ] || die "no scan yet: run '$0 scan' first"
+  fix_report
   info "Build the Mac setup (macOS darwin $MACOS)"
   rm -rf "$EFI"
   (cd "$SRC" && python3 -u -m p1401 build "$SCAN/Report.json" "$SCAN/ACPI" "$EFI" --macos "$MACOS" $NEWID --json) \
